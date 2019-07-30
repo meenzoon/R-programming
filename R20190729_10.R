@@ -122,11 +122,11 @@ ggplot(data = midwest, aes(x = poptotal, y = popasian)) +
 mpg_bar <- mpg %>% 
   filter(class == "suv") %>% 
   group_by(manufacturer) %>% 
-  summarise(mean_hwy = mean(hwy, na.rm = T)) %>% 
-  arrange(-mean_hwy) %>% 
+  summarise(mean_cty = mean(cty)) %>% 
+  arrange(-mean_cty) %>% 
   head(5)
 
-ggplot(data = mpg_bar, aes(x = reorder(manufacturer, mean_hwy), y = mean_hwy)) + geom_col()
+ggplot(data = mpg_bar, aes(x = reorder(manufacturer, mean_cty), y = mean_cty)) + geom_col()
 
 # 2. 자동차 중에서 어떤 차종이 많은지 알아보려고 합니다. 자동차 종류별 빈도를 표현한 막대그래프를 만들어보시오.
-ggplot(data = mpg, aes(x = model)) + geom_bar()
+ggplot(data = mpg, aes(x = class)) + geom_bar()
