@@ -112,9 +112,9 @@ ggplot(data = mpg, aes(x = cty, y = hwy)) + geom_point()
 
 # 2. midwest에서 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 확인하려고 합니다. x축은 poptotal, y축은 popasian로 된 산점도를 만들어 보시오. 전체 인구는 50만명 이하, 아시아인 인구는 1만명 이하인 지역만 산점도에 표시되도록 설정하시오.
 View(midwest)
-ggplot(data = midwest, aes(x = poptotal, y = popasian))
-  geom_point()
-  xlim(0, 500000)
+ggplot(data = midwest, aes(x = poptotal, y = popasian)) +
+  geom_point() +
+  xlim(0, 500000) +
   ylim(0, 10000)
 
 # < 막대 그래프 확인학습 >
